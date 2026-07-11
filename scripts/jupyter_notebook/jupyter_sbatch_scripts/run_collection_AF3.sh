@@ -12,10 +12,7 @@
 #SBATCH --mail-type=ALL  # email options
 #SBATCH --mail-user=jackson.reilly@tufts.edu
 #SBATCH --array=1-10  # 1-(total number of binder sequences)
-# Note: the number of binder sequences in your fasta file should be equal to the number of lines in the file divided by 2 (there are 2 lines per binder) then subtracted by 1 (accounting for the target protein)
-
-# Allow AlphaFold GPU access
-module load cuda/12.9.0
+# Note: in the above line, the number of binder sequences in your fasta file should be equal to the number of lines in the file divided by 2 (there are 2 lines per binder) then subtracted by 1 (accounting for the target protein)
 
 # Disable core dumps
 ulimit -c 0

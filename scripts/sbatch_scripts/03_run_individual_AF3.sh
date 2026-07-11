@@ -46,9 +46,6 @@ export CONDA_DIR
 export DB_DIR
 export MODEL_DIR
 
-# Load CUDA module
-module load "$CUDA"
-
 # Build paths from config variables
 BASE_OUTPUT_DIR="${SPEEDYFOLD_DIR}/outputs/individual_outputs/${CURRENT_RUN_DIR}"
 JSON_FILE="${INITIAL_JSON_DIR}/${INDIVIDUAL_BINDER}.json"

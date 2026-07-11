@@ -20,7 +20,7 @@ Time Estimates (100 nanobodies) (873 amino acid target and ~110 amino acid binde
 2. Without Speedyfold: 250hr (~2.5hr for 100 iterations)
 
 Preliminary Setup:
-- Within your user directory, create a parent directory (which I will refer to as "AlphaFold"), and clone "speedyfold" to it
+- Within your user directory, create a parent directory (which I will refer to as "AlphaFold", but you can name freely), and clone "speedyfold" to it
 - Request the AlphaFold3 model parameters through completing a form linked in their GitHub repository - https://github.com/google-deepmind/alphafold3
 - Begin setting up a conda environment by requesting a GPU if you're using a computing cluster, and follow steps 0-3 in these GitHub instructions (in step 1 install python 3.11) - https://github.com/Model3DBio/AlphaFold3-Conda-Install
 - In step 4.1 of the instructions, clone the "alphafold3" directory to your "AlphaFold" directory 
@@ -28,22 +28,22 @@ Preliminary Setup:
 - If step 4.5 and 4.6 doesn't work, refer to the pip section within the "environment.yml" file, and pip install one of the missing packages through a command like `pip install tqdm`. This should give a warning message in return showing all other packages and versions you have yet to pip install. After pip installing all these packages, perform steps 4.5 and 4.6 again
 - Add ANARCI to your conda environment by activating your environment and using the command: `conda install -c bioconda anarci`
 - In case of persisting environment issues, refer again to the environment.yml file which contains all environment dependencies, and compare your packages to it
-- Perform a one time edit of the variable directory paths within the "config.sh" file inside the "scripts" directory 
+- Perform a one time edit of the variable directory paths within the "config.sh" file inside the "scripts" directory
 
 Directory Path Map:
-- (User directory)
---- (Conda environment)
---- (Alphafold database)
---- AlphaFold (parent directory)
------ speedyfold (working directory - SpeedyFold GitHub)
------ alphafold3 (suplementary code - AlphaFold3 GitHub)
+- (User directory)  
+--- (Conda environment)  
+--- (Alphafold database)  
+--- AlphaFold (parent directory - NAME IS CHANGEABLE)  
+----- speedyfold (working directory - DO NOT CHANGE NAME - SpeedyFold GitHub) 
+----- alphafold3 (suplementary code - DO NOT CHANGE NAME - AlphaFold3 GitHub)  
 
 SpeedyFold can be used by following ONE of the processes below...
 
 Sbatch Job Process (if running SpeedyFold on a computing cluster):
 1. Prepare an input FASTA file with the target nanobody on lines 1-2, and all binder nanobodies on subsequent lines (see example in sequences directory)
 2. Open the "scripts" directory and edit the variable paths indicated within the "config.sh" file 
-3. To run the entiriety of SpeedyFold, activate your Conda environment and submit the "master\_script.sh" file contained within the "sbatch\_scripts" directory through the command `sbatch\_path/to/master_script.sh`
+3. To run the entiriety of SpeedyFold, activate your Conda environment and submit the "master\_script.sh" file contained within the "sbatch\_scripts" directory through the command `sbatch_path/to/master_script.sh`
 4. Althernatively, you can activate your Conda environment and submit any of the scripts 01-06 contained in the "sbatch\_scripts" directory to isolate a specific step of SpeedyFold
 5. Note: you may need to adjust some the #SBATCH commands within scripts 01-06 depending on your purposes, and your computing cluster's resources
 
@@ -51,7 +51,7 @@ Bash Process (if running SpeedyFold on a personal computer):
 1. Prepare an input FASTA file with the target nanobody on lines 1-2, and all binder nanobodies on subsequent lines (see example in sequences directory)
 2. Open the "scripts" directory and edit the variable paths indicated within the "config.sh" file
 3. Make any bash script contained within the "bash\_scripts" directory executable through the command `chmod +x path/to/file.sh`
-3. To run the entiriety of SpeedyFold, activate your Conda environment and submit the "master\_script.sh" file contained within the "bash\_scripts" directory through the command `bash\_path/to/master_script.sh`
+3. To run the entiriety of SpeedyFold, activate your Conda environment and submit the "master\_script.sh" file contained within the "bash\_scripts" directory through the command `bash_path/to/master_script.sh`
 4. Althernatively, you can activate your Conda environment and submit any of the scripts 01-06 contained in the "bash\_scripts" directory to isolate a specific step of SpeedyFold
 
 Jupyter Notebook Process (if you wish to experiment and make additions to the code):
@@ -66,6 +66,11 @@ Jupyter Notebook Process (if you wish to experiment and make additions to the co
 9. Run block 7 to perform the core part of SpeedyFold, aligning all MSAs seperately to every binder in the dataset, and producing all json files required for the collection run of AlphaFold
 10. If working on a computing cluster, navigate to jupyter\_sbatch\_scripts and submit the script "run\_collection\_AF3.sh" through `sbatch path/to/run_collection_AF3.sh`
 11. If working on a personal computer, navigate to jupyter\_bash\_scripts and submit the script "run\_collection\_AF3.sh" through `sbatch path/to/run_collection_AF3.sh`
+
+CUDA Setup (if applicable):
+- This section only applies if you run into an error stating "RuntimeError: Unable to initialize backend 'cuda': FAILED_PRECONDITION: No visible GPU devices. (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)"
+- To solve this issue you may need to install CUDA on your computer or conda environment (version 12.9.0 is known to work with SpeedyFold)
+- Alternatively, if you are using an HPC cluster, you may already have a module available with CUDA. If so, instead of installing CUDA you can import this module within all "run\_individual\_AF3.sh" and "run\_collection\_AF3.sh" scripts
 
 Final Note:
 - If you make edits to these files and come across an issue submitting them due to unexpected line breaks, running `sed -i 's/\r$//' path/to/file_name` should solve the issue

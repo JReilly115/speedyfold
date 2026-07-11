@@ -20,28 +20,25 @@ export FASTA_FILENAME="test1.fasta"
 export SEED_VALUE=5
 
 # ================================================================================
-# Adjust below 5 variables ONE TIME (when first installing SpeedyFold)
+# Adjust below 3 variables ONE TIME (when first installing SpeedyFold)
 # ================================================================================
 
 # User directory
-export USER_DIR="/cluster/tufts/cowenlab/jreill05"
+export USER_DIR="/path/to/user_dir"
+
+# Conda environment location
+export CONDA_DIR="/conda_path/condaenv/Alphafold3"
+
+# AF3 database directory
+export DB_DIR="/path/to/AF3_database"
+
+# ================================================================================
 
 # Working directory
 export SPEEDYFOLD_DIR="${USER_DIR}/AlphaFold/speedyfold"
 
 # Official AF3 code directory
 export ALPHAFOLD3DIR="${USER_DIR}/AlphaFold/alphafold3"
-
-# Conda environment location
-export CONDA_DIR="${USER_DIR}/Database_Conda_Environment/condaenv/Alphafold3_test_GPU"
-
-# AF3 database directory
-export DB_DIR="/cluster/tufts/biocontainers/datasets/alphafold3/20241219/public_databases"
-
-# CUDA module name
-export CUDA="cuda/12.9.0"
-
-# ================================================================================
 
 # AlphaFold parameters
 export MODEL_DIR="${ALPHAFOLD3DIR}/models"

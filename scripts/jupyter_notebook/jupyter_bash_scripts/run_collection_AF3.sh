@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Allow AlphaFold GPU access
-module load cuda/12.9.0
-
 # Disable core dumps
 ulimit -c 0
 

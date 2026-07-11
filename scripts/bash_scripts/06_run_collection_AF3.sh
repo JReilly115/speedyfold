@@ -24,9 +24,6 @@ export CONDA_DIR
 export DB_DIR
 export MODEL_DIR
 
-# Load CUDA module
-module load "$CUDA"
-
 # Get list of all JSON files
 shopt -s nullglob
 JSON_FILES=(${COLLECTION_JSON_DIR}/*.json)

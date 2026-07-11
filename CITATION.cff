@@ -1,6 +1,3 @@
-# This CITATION.cff file was generated with cffinit.
-# Visit https://bit.ly/cffinit to generate yours today!
-
 cff-version: 1.2.0
 title: SpeedyFold
 type: software
@@ -17,13 +14,13 @@ abstract: >-
   numbering for all sequences in a dataset, builds a master
   framework of positions, and realigns MSAs to new queries
   with minimal computational overhead. With access to one
-  CPU/GPU, SpeedyFold is estimated to reduce AlphaFold3
-  runtime from ~250 hours to ~27 hours for a 100-protein
-  dataset of related proteins while maintaining prediction
-  confidence. SpeedyFold's ability to rapidly screen large
-  libraries of binding proteins against a target makes it
-  ideal for antibody discovery, nanobody engineering, and
-  epitope mapping studies.
+  CPU/GPU, SpeedyFold can reduce AlphaFold3 runtime from 
+  ~250 hours to ~27 hours for a 100-protein dataset of 
+  related proteins while maintaining prediction confidence.
+  SpeedyFold's ability to rapidly screen large libraries of
+  binding proteins against a target makes it ideal for 
+  antibody discovery, nanobody engineering, and epitope
+  mapping studies.
 keywords:
   - AlphaFold3
   - High-Throughput
@@ -34,6 +31,6 @@ keywords:
   - Bioinformatics
   - ANARCI
 license: Apache-2.0
-commit: SpeedyFold release!
+commit: SpeedyFold v1.0!
 version: '1.00'
 date-released: '2026-06-24'

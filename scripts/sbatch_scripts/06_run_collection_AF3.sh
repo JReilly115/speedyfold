@@ -11,7 +11,7 @@
 #SBATCH --mail-type=ALL  # email options
 #SBATCH --mail-user=jackson.reilly@tufts.edu
 # Manually setting #SBATCH --array=1-(total number of binder sequences) will allow you to run this file standalone. Do not include the array command if running the master script
-# Note: the number of binder sequences in your fasta file is equal to the number of lines in the file divided by 2 (there are 2 lines per binder) then subtracted by 1 (accounting for the target protein)
+# Note: in the above line, the number of binder sequences in your fasta file is equal to the number of lines in the file divided by 2 (there are 2 lines per binder) then subtracted by 1 (accounting for the target protein)
 
 # Run a collection of AlphaFold jobs simultaneously using the realigned MSAs generated during the individual run of Alphafold
 
@@ -47,9 +47,6 @@ export ALPHAFOLD3DIR
 export CONDA_DIR
 export DB_DIR
 export MODEL_DIR
-
-# Load CUDA module
-module load "$CUDA"
 
 # Get list of all JSON files
 shopt -s nullglob
