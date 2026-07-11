@@ -1,0 +1,9 @@
+- Make a new version of run_collection_af3.sh for users running it on one node which parses through json files and submits them one at a time (time can be saved here by reusing the jax cache).
+- Edit README.md file to make the block numbering in the jupyter notebook section accurate
+- Use only one seed in json files and add flag to AlphaFold run files to set the amount of samples (should be 1) to generate per seed (first check how different seeds and samples are from eachother in output)
+- Add print statements to the 04_run_pipeline.sh file and other scripts to show feedback in command line (when making personal computer versions of the files)
+- Possibly incorperate SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)" into scripts instead of having to declare file path manually
+- Make it so my code can account for multimer proteins when producing json files (set multimer = 3 to take first 3 sequences in fasta file as target proteins)
+- Figure out how to handle json file ID values (they need to be uppercase letters). Maybe use alphabet
+- Make names of jobs that show up in squeue be the same as their file name
+- Try to install cuda to conda environment instead of having to rely on the module load

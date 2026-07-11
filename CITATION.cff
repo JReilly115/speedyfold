@@ -1,0 +1,39 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: SpeedyFold
+type: software
+authors:
+  - given-names: Jackson
+    family-names: Reilly
+    email: jackson.reilly115@gmail.com
+    affiliation: Tufts University
+repository-code: 'https://github.com/JReilly115/SpeedyFold'
+abstract: >-
+  SpeedyFold is a software pipeline for dramatically
+  speeding up AlphaFold3 predictions on large sets of
+  related nanobodies. It uses ANARCI to establish IMGT
+  numbering for all sequences in a dataset, builds a master
+  framework of positions, and realigns MSAs to new queries
+  with minimal computational overhead. With access to one
+  CPU/GPU, SpeedyFold is estimated to reduce AlphaFold3
+  runtime from ~250 hours to ~27 hours for a 100-protein
+  dataset of related proteins while maintaining prediction
+  confidence. SpeedyFold's ability to rapidly screen large
+  libraries of binding proteins against a target makes it
+  ideal for antibody discovery, nanobody engineering, and
+  epitope mapping studies.
+keywords:
+  - AlphaFold3
+  - High-Throughput
+  - Protein Structure Prediction
+  - Multiple Sequence Alignment
+  - Antibody
+  - Nanobody
+  - Bioinformatics
+  - ANARCI
+license: Apache-2.0
+commit: SpeedyFold release!
+version: '1.00'
+date-released: '2026-06-24'
