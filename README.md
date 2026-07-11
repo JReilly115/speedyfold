@@ -31,12 +31,12 @@ Preliminary Setup:
 - Perform a one time edit of the variable directory paths within the "config.sh" file inside the "scripts" directory 
 
 Directory Path Map:
-- (User directory)
---- (Conda environment)
---- (Alphafold database)
---- AlphaFold (parent directory)
------ speedyfold (working directory - SpeedyFold GitHub)
------ alphafold3 (suplementary code - AlphaFold3 GitHub)
+- (User directory)  
+--- (Conda environment)  
+--- (Alphafold database)  
+--- AlphaFold (parent directory)  
+----- speedyfold (working directory - SpeedyFold GitHub)  
+----- alphafold3 (suplementary code - AlphaFold3 GitHub)  
 
 SpeedyFold can be used by following ONE of the processes below...
 
