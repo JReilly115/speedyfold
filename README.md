@@ -43,7 +43,7 @@ SpeedyFold can be used by following ONE of the processes below...
 Sbatch Job Process (if running SpeedyFold on a computing cluster):
 1. Prepare an input FASTA file with the target nanobody on lines 1-2, and all binder nanobodies on subsequent lines (see example in sequences directory)
 2. Open the "scripts" directory and edit the variable paths indicated within the "config.sh" file 
-3. To run the entiriety of SpeedyFold, activate your Conda environment and submit the "master\_script.sh" file contained within the "sbatch\_scripts" directory through the command `sbatch\_path/to/master_script.sh`
+3. To run the entiriety of SpeedyFold, activate your Conda environment and submit the "master\_script.sh" file contained within the "sbatch\_scripts" directory through the command `sbatch_path/to/master_script.sh`
 4. Althernatively, you can activate your Conda environment and submit any of the scripts 01-06 contained in the "sbatch\_scripts" directory to isolate a specific step of SpeedyFold
 5. Note: you may need to adjust some the #SBATCH commands within scripts 01-06 depending on your purposes, and your computing cluster's resources
 
@@ -51,7 +51,7 @@ Bash Process (if running SpeedyFold on a personal computer):
 1. Prepare an input FASTA file with the target nanobody on lines 1-2, and all binder nanobodies on subsequent lines (see example in sequences directory)
 2. Open the "scripts" directory and edit the variable paths indicated within the "config.sh" file
 3. Make any bash script contained within the "bash\_scripts" directory executable through the command `chmod +x path/to/file.sh`
-3. To run the entiriety of SpeedyFold, activate your Conda environment and submit the "master\_script.sh" file contained within the "bash\_scripts" directory through the command `bash\_path/to/master_script.sh`
+3. To run the entiriety of SpeedyFold, activate your Conda environment and submit the "master\_script.sh" file contained within the "bash\_scripts" directory through the command `bash_path/to/master_script.sh`
 4. Althernatively, you can activate your Conda environment and submit any of the scripts 01-06 contained in the "bash\_scripts" directory to isolate a specific step of SpeedyFold
 
 Jupyter Notebook Process (if you wish to experiment and make additions to the code):
