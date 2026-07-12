@@ -8,24 +8,6 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # Source the config file
 source "${SCRIPT_DIR}/config.sh"
 
-# Get the file path to this script
-if [ -n "$SLURM_JOB_ID" ]; then
-    ORIGINAL_SCRIPT=$(scontrol show job "$SLURM_JOB_ID" | awk -F= '/Command=/{print $2}' | cut -d' ' -f1)
-    [ -z "$ORIGINAL_SCRIPT" ] && ORIGINAL_SCRIPT=$(realpath "$0")
-else
-    ORIGINAL_SCRIPT=$(realpath "$0")
-fi
-
-# Get the directory containing the configurations script
-SCRIPT_DIR=$(dirname "$ORIGINAL_SCRIPT")
-PARENT_DIR=$(dirname "$SCRIPT_DIR")
-
-# Source configurations file
-source "${PARENT_DIR}/configurations.sh"
-
-# Create directories...
-mkdir -p "${SPEEDYFOLD_DIR}/MSAs/${CURRENT_RUN_DIR}"
-
 # Run each script and wait for it to complete before continuing
 JOB1=$(sbatch --parsable ${SCRIPT_DIR}/bash_scripts/01_create_empty_directories.sh)
 sleep 5

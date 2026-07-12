@@ -23,8 +23,8 @@ export SEED_VALUE=5
 # Adjust below 3 variables ONE TIME (when first installing SpeedyFold)
 # ================================================================================
 
-# User directory
-export USER_DIR="/path/to/user_dir"
+# Directory containing "speedyfold" and "alphafold3"
+export PARENT_DIR="/path/to/parent_dir"
 
 # Conda environment location
 export CONDA_DIR="/conda_path/condaenv/Alphafold3"
@@ -35,10 +35,10 @@ export DB_DIR="/path/to/AF3_database"
 # ================================================================================
 
 # Working directory
-export SPEEDYFOLD_DIR="${USER_DIR}/AlphaFold/speedyfold"
+export SPEEDYFOLD_DIR="${PARENT_DIR}/speedyfold"
 
 # Official AF3 code directory
-export ALPHAFOLD3DIR="${USER_DIR}/AlphaFold/alphafold3"
+export ALPHAFOLD3DIR="${PARENT_DIR}/alphafold3"
 
 # AlphaFold parameters
 export MODEL_DIR="${ALPHAFOLD3DIR}/models"
