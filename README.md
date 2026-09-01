@@ -36,7 +36,7 @@ Directory Path Map:
 --- (Conda environment)  
 --- (Alphafold database)  
 --- AlphaFold (parent directory - NAME IS CHANGEABLE)  
------ speedyfold (working directory - DO NOT CHANGE NAME - SpeedyFold GitHub) 
+----- speedyfold (working directory - DO NOT CHANGE NAME - SpeedyFold GitHub)  
 ----- alphafold3 (suplementary code - DO NOT CHANGE NAME - AlphaFold3 GitHub)  
 
 SpeedyFold can be used by following ONE of the processes below...
